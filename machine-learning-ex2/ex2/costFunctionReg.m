@@ -27,8 +27,8 @@ h=sigmoid(X*theta);
 z=(1/m)*X'*(h-y);
 grad=(1/m)*X'*(h-y)+ (lambda/m)*theta;
 grad(1)=z(1);
-J=-(1/m)*(y'*log(h)+(1-y)'*log(1-h)) + (1/2)*(lambda/m)*(theta.^2);
-size(J);
-temp=-(1/m)*(y'*log(h)+(1-y)'*log(1-h));
-J
+%we take theta(2:size(theta)) as in formula we have to sum from 1 till all not 0 till all
+J=-(1/m)*(y'*log(h)+(1-y)'*log(1-h)) + (1/2)*(lambda*(1/m))*(theta(2:size(theta))'*theta(2:size(theta)));
+%temp=-(1/m)*(y'*log(h)+(1-y)'*log(1-h));
+%J(1)=temp(1);
 end
