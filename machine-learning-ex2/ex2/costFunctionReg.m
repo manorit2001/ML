@@ -27,4 +27,8 @@ h=sigmoid(X*theta);
 z=(1/m)*X'*(h-y);
 grad=(1/m)*X'*(h-y)+ (lambda/m)*theta;
 grad(1)=z(1);
+J=-(1/m)*(y'*log(h)+(1-y)'*log(1-h)) + (1/2)*(lambda/m)*(theta.^2);
+size(J);
+temp=-(1/m)*(y'*log(h)+(1-y)'*log(1-h));
+J
 end
